@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GermanBuddy</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
 
@@ -23,13 +22,35 @@
     <button class="btn" onclick="sendCommand('/info')">Wie nutzt man GermanBuddy</button>
 
     <script>
-        // Initialize the Telegram Web App
-        Telegram.WebApp.init();
-
-        // Function to send command to the bot
+        // Function to send command to the bot via HTTP API
         function sendCommand(command) {
-            // Sending command to the bot using sendData method
-            Telegram.WebApp.sendData(command);
+            const botToken = '7996906017:AAGXYPXuiDGZ1CkyAYIhOBsOOQIuTwK-y8w';  // Your bot token
+            const chatId = '<YOUR_CHAT_ID>';  // Replace with your chat ID or user ID
+
+            // URL to Telegram API
+            const apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+            // Create request data
+            const data = {
+                chat_id: chatId,
+                text: command  // Sending the command as the message text
+            };
+
+            // Sending the request using Fetch API
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Message sent:', data);
+            })
+            .catch((error) => {
+                console.error('Error sending message:', error);
+            });
         }
     </script>
 
