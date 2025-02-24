@@ -12,15 +12,26 @@
     <h2>Willkommen zu GermanBuddy! 🇩🇪</h2>
     <p>Wähle eine Option:</p>
 
-    <button class="btn" onclick="window.location.href='https://t.me/YourBotUsername?start=unlimited_access'">Unlimited Access</button>
-    <button class="btn" onclick="window.location.href='https://t.me/YourBotUsername?start=/language'">Ändern Deutsch level</button>
-    <button class="btn" onclick="window.location.href='https://t.me/YourBotUsername?start=/change_voice'">Ändern Stimme</button>
-    <button class="btn" onclick="window.location.href='https://t.me/YourBotUsername?start=/practice_topics'">Wähle Themen zum üben</button>
-    <button class="btn" onclick="window.location.href='/change_voice'">Zum Vorstellungsgespräch vorbereiten</button>
-    <button class="btn" onclick="window.location.href='/change_voice'">Lebenslauf korrigieren</button>
-    <button class="btn" onclick="window.location.href='https://t.me/YourBotUsername?start=/motivational_letter'">Motivationsschreiben korrigieren</button>
-    <button class="btn" onclick="window.location.href='https://t.me/YourBotUsername?start=/speaking_practice'">Einfach Thema wählen und reden üben</button>
-    <button class="btn" onclick="window.location.href='https://t.me/YourBotUsername?start=/info'">Wie nutzt man GermanBuddy</button>
+    <button class="btn" onclick="sendCommand('/unlimited_access')">Unlimited Access</button>
+    <button class="btn" onclick="sendCommand('/language')">Ändern Deutsch level</button>
+    <button class="btn" onclick="sendCommand('/change_voice')">Ändern Stimme</button>
+    <button class="btn" onclick="sendCommand('/practice_topics')">Wähle Themen zum üben</button>
+    <button class="btn" onclick="sendCommand('/interview')">Zum Vorstellungsgespräch vorbereiten</button>
+    <button class="btn" onclick="sendCommand('/resume')">Lebenslauf korrigieren</button>
+    <button class="btn" onclick="sendCommand('/motivational_letter')">Motivationsschreiben korrigieren</button>
+    <button class="btn" onclick="sendCommand('/speaking_practice')">Einfach Thema wählen und reden üben</button>
+    <button class="btn" onclick="sendCommand('/info')">Wie nutzt man GermanBuddy</button>
+
+    <script>
+        // Initialize the Telegram Web App
+        Telegram.WebApp.init();
+
+        // Function to send command to the bot
+        function sendCommand(command) {
+            // Sending command to the bot using sendData method
+            Telegram.WebApp.sendData(command);
+        }
+    </script>
 
     <script src="script.js"></script>
 </body>
