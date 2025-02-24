@@ -1,28 +1,27 @@
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f8f8f8;
-    padding: 20px;
-}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GermanBuddy</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
 
-h2 {
-    color: #0088cc;
-}
+    <h2>Willkommen zu GermanBuddy! 🇩🇪</h2>
+    <p>Wähle eine Option:</p>
 
-.btn {
-    display: block;
-    width: 90%;
-    margin: 10px auto;
-    padding: 15px;
-    font-size: 16px;
-    background-color: #0088cc;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s;
-}
+    <button class="btn" onclick="alert('Unlimited Access gewählt!')">Unlimited Access</button>
+    <button class="btn" onclick="alert('Level ändern!')">Ändern Deutsch level</button>
+    <button class="btn" onclick="alert('Stimme geändert!')">Ändern Stimme</button>
+    <button class="btn" onclick="alert('Themen zum Üben!')">Wähle Themen zum üben</button>
+    <button class="btn" onclick="alert('Vorstellungsgespräch!')">Zum Vorstellungsgespräch vorbereiten</button>
+    <button class="btn" onclick="alert('Lebenslauf korrigiert!')">Lebenslauf korrigieren</button>
+    <button class="btn" onclick="alert('Motivationsschreiben korrigiert!')">Motivationsschreiben korrigieren</button>
+    <button class="btn" onclick="alert('Reden üben!')">Einfach Thema wählen und reden üben</button>
+    <button class="btn" onclick="alert('Infos über GermanBuddy!')">Wie nutzt man GermanBuddy</button>
 
-.btn:hover {
-    background-color: #005f99;
-}
+    <script src="script.js"></script>
+</body>
+</html>
